@@ -1,7 +1,52 @@
 {
-"users": {
+    "users": {
+        "1111687369": {
+            "roles": [
+                [
+                    "Хоста",
+                    "hosta"
+                ],
+                [
+                    "Кальянщик",
+                    "hookah"
+                ],
+                [
+                    "Вечер",
+                    "hookah_evening"
+                ]
+            ],
+            "week_late": 0,
+            "monthly_counter": 0,
+            "today_come": "",
+            "today_checklist": [],
+            "name": "Vasya"
+        }
     },
     "user_list": [
     ],
-    "shedule": []
+    "come": {
+        "hookah": false,
+        "hookah_evening": false,
+        "bar": false,
+        "hosta": false
+    },
+    "checkList": {
+        "hookah": false,
+        "hookah_evening": false,
+        "bar": false,
+        "hosta": false
+    },
+    "today_day": 0,
+    "today_come": {
+        "hookah": 0,
+        "hookah_evening": 0,
+        "bar": 0,
+        "hosta": 0
+    },
+    "today_checklist": {
+        "hookah": 0,
+        "hookah_evening": 0,
+        "bar": 0,
+        "hosta": 0
+    }
 }

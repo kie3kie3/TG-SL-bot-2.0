@@ -1,10 +1,10 @@
 import threading
-import inbox
+import loop
 import handler
 
 
 def startBots():
-    threadInbox = threading.Thread(target=inbox.main)
+    threadInbox = threading.Thread(target=loop.main)
     threadHandler = threading.Thread(target=handler.main)
     threadInbox.start()
     threadHandler.start()

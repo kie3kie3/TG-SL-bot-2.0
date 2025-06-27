@@ -7,6 +7,13 @@ from getter import getDb, setDb
 bot = telebot.TeleBot(secret.new_token)
 
 
+def findRole(role):
+    i = 0
+    while config.rolesActions[i][1] != role:
+        i += 1
+    return config.rolesActions[i]
+
+
 def checkRoles(db, id):
     res = ''
     roleList = db['users'][id]['roles']
@@ -19,7 +26,6 @@ def checkRoles(db, id):
 
 
 def changeRole(message, db, edit=False):
-    setDb(db)
     markup = telebot.types.InlineKeyboardMarkup()
     for elem in config.roles:
         button = telebot.types.InlineKeyboardButton(
@@ -58,12 +64,17 @@ def addUser(message, db):
     db['users'][str(message.chat.id)] = {
         'roles' : [],
         'week_late' : 0,
-        'monthly_counter' : 0
+        'monthly_counter' : 0,
+        'today_come': '',
+        'today_checklist': [],
+        'name': message.text
     }
     bot.send_message(message.chat.id, 'Хорошо, теперь укажи кем работаешь')
+    setDb(db)
     changeRole(message, db)
 
     
 
 def cnangeUser(message, db):
-    ...
+    bot.send_message(message.chat.id, text='Чуть позже добавлю все возможности, а пока...')
+    changeRole(message, db, False)
